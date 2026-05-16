@@ -21,6 +21,7 @@ if (!function_exists('load_local_env_file')) {
         }
 
         foreach ($lines as $line) {
+            $line = preg_replace('/^\xEF\xBB\xBF/', '', $line);
             $line = trim($line);
             if ($line === '' || str_starts_with($line, '#')) {
                 continue;
@@ -82,11 +83,11 @@ if (!function_exists('database_config')) {
     {
         $url = app_env('DATABASE_URL') ?: app_env('MYSQL_URL');
         $config = [
-            'host' => app_env('DB_HOST', '127.0.0.1'),
-            'port' => (int) app_env('DB_PORT', 3306),
-            'database' => app_env('DB_DATABASE', app_env('DB_NAME', 'project_db')),
-            'username' => app_env('DB_USERNAME', app_env('DB_USER', 'root')),
-            'password' => app_env('DB_PASSWORD', app_env('DB_PASS', '')),
+            'host' => app_env('DB_HOST', app_env('MYSQLHOST', '127.0.0.1')),
+            'port' => (int) app_env('DB_PORT', app_env('MYSQLPORT', 3306)),
+            'database' => app_env('DB_DATABASE', app_env('DB_NAME', app_env('MYSQLDATABASE', 'project_db'))),
+            'username' => app_env('DB_USERNAME', app_env('DB_USER', app_env('MYSQLUSER', 'root'))),
+            'password' => app_env('DB_PASSWORD', app_env('DB_PASS', app_env('MYSQLPASSWORD', ''))),
             'charset' => app_env('DB_CHARSET', 'utf8mb4'),
         ];
 
