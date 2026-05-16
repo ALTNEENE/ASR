@@ -1,0 +1,16 @@
+{
+  "name": "dmproject/diabetes-monitoring",
+  "description": "Remote Diabetes Monitoring System with PDF Report Generation",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "dompdf/dompdf": "^3.1",
+    "google/apiclient": "^2.18",
+    "phpmailer/phpmailer": "^7.0"
+  }
+}
