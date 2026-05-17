@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 session_start();
 header('Content-Type: application/json; charset=UTF-8');
+ini_set('display_errors', '0');
 
 if (!isset($_SESSION['user_id'])) {
     http_response_code(401);
@@ -706,7 +707,6 @@ curl_setopt_array($ch, [
 $response = curl_exec($ch);
 $curlError = curl_error($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
 
 if ($curlError !== '' || !$response || $httpCode < 200 || $httpCode >= 300) {
     $payload = ['success' => true, 'data' => $fallback, 'cached' => false, 'source' => 'fallback_http'];

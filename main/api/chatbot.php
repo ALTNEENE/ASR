@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 session_start();
 header('Content-Type: application/json; charset=UTF-8');
+ini_set('display_errors', '0');
 
 require_once __DIR__ . '/../../config/gemini_config.php';
 
@@ -86,7 +87,6 @@ function tryGeminiAPI(string $prompt): array
         $response = curl_exec($ch);
         $curlError = curl_error($ch);
         $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
 
         if ($curlError !== '') {
             $lastError = 'cURL error: ' . $curlError;

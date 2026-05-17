@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 session_start();
 header('Content-Type: application/json; charset=UTF-8');
+ini_set('display_errors', '0');
 
 require_once __DIR__ . '/../../config/gemini_config.php';
 require_once __DIR__ . '/../../google_sign_in/config/db.php';
@@ -122,7 +123,6 @@ function call_gemini(string $prompt): array
     $response = curl_exec($ch);
     $err = curl_error($ch);
     $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($err !== '') {
         return ['ok' => false, 'error' => $err];

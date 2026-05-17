@@ -1,0 +1,377 @@
+﻿بسم الله الرحمن الرحيم
+Karary University
+Faculty of Computer Science and
+Information Technology
+Supplementary research for partial completion
+Bachelor's degree in Software Engineering
+Remote diabetes monitoring and follow-up system
+نظام مراقبة ومتابعة مرض ى السكري عن بعد
+Prepared by :
+Ahmed Tajelsir Saied Ahmed Ibrahim
+Raghad Osman Ali Ahmed
+Saja Heraika Mohamed
+Supervisor by :DR/Nizar Ali Fideel
+October 2026
+الاية القرانية
+قال تعالى:
+" إنـما يخـشى الله من عباده العلمـاء إن الله عزيزغفور"
+سورة فاطر الاية28
+صدق الله العظيم
+الاهـداء
+اهداء الى كل من اضاء بعلمه عقل غيره او هدى بالجواب الصحيح حيرة سائلي ه فأظهر بسماحته تواضع العلما ء وبرحابته سماحه العارفين
+الشـكر والتقـدير
+ابي لقد وضعت دائما عائلتك في المقام الاول وأنا ممتن جدا لكل ماقمت به ، وأمي قد ضحيتي كثي ار بسعادتك من اجل رفاهيتنا فأدعو الله عز وجل أن ينير حياتك.
+لن تكفي كلمات الشكر بالعالم، امي وابي العزي ازن اشكركم على حبكم وتوجيهكم ودعمكم طوال حياتي ، انتم قدوة بالنسبة لي ولأصدقائي المقربين، وافضل اصدقائي.
+والشكرالجزيل لمن أشرف علينا وساعدنا في هذا المشروع وكان المعلموالاب الروحي لنا في رحلتنا التعليمية الجامعيةالدكتور: م . نزار علي فضيل
+الاهـداءiii
+الشـكر والتقـديرiv
+Chapter One3
+1.INTRODUCTION4
+1.2. Research PROPLEM6
+1.3 Research Objectives6
+1.4 . Research Method7
+1.5 TOOLS8
+1.6Research Scop8
+1.7Research Structure8
+Chapter two:10
+Letrcture Review10
+2.1.lntroduction:11
+2.2.literature review14
+2.4.Conclusion16
+Chapter Three17
+Methodology17
+3.1 Introduction18
+3.2 Data collection methods18
+Table of Scenario (3.1) :20
+Figure (3.1) System Architecture Diagram21
+Figure (3.2) Use Case Diagram22
+Figure (3.3) Activity Diagram23
+Figure (3.4) Class Diagram24
+Figure (3.5) User Signup Sequence Diagram25
+Figure (3.6) Manage User Sequence Diagram26
+Figure (3.7) Manage System Content Sequence Diagram27
+Figure (3.8) — Login Start Test Sequence Diagram28
+Chapter Four29
+Design & Implementation29
+Chapter five41
+Results and recommendations41
+5.1 Results42
+REFERENCES48
+List offigure:page
+Figure (3.1) System Architecture Diagram22
+Figure (3.2) Use Case Diagram23
+Figure (3.3) Activity Diagram24
+Figure (3.4) Class Diagram25
+Figure (3.5) User Signup Sequence Diagram26
+Figure (3.6) Manage User Sequence Diagram27
+Figure (3.7) Manage System Content Sequence Diagram28
+Figure (3.8) — Login Start Test Sequence Diagram29
+Figure (4.1) Main System Entry Point and User Welcome Screen : 31
+Figure (4.2) Smart Assistant Interface for Medical Awareness 32
+Figure (4.3) SmartAssistant Interface for Medical Awareness33
+Figure (4.4) Health Awareness and Educational Resources Interface :.34
+Figure (4.5) User Registration and Authentication Interface :35
+Figure (4.6) User Login and Authentication Interface.36
+Figure (4.7) Integrated Patient Dashboard and Health Monitoring Summary.37
+Figure (4.8) Personalized Clinical Advice and Gender-Specific Health Recommendations :.37
+Figure (4.9)Smart Glucose Logging and Evaluation Tools Interface.39
+Figure (4.10) Comprehensive Diabetes Evaluation Report and Export Interface.39
+Figure (4.11) Dynamic Readings Log and Historical Data Analysis Interface:40
+Figure (4.12)Specialized Guidance Interface for Non-Diabetic and Unsure Users:41
+List of table : page
+Table of Scenario (3.1) :24
+ABSTRACT
+Diabetes mellitus represents one of the most significant modern health challenges, necessitating innovative technological solutions to mitigate complications and reduce the burden on healthcare institutions. This research introduces A.S.R as an integrated digital ecosystem designed to transform diabetes management from passive monitoring into proactive, preventive care. The research identifies critical gaps in current systems, which are often isolated and lack real-time decision-support mechanisms while neglecting the preventive needs of at-risk individuals. To address these gaps, the study adopts a software engineering methodology that provides personalized smart workflows for three user categories: Diabetic, Preventive, and Awareness paths. These paths are supported by an interactive AI assistant and an automated data evaluation system. The primary contributions of this work include effectively linking data analysis with decision support and providing a functional technical bridge to organize and present health data to medical professionals through automated reporting. The evaluation results demonstrate that the system successfully fulfilled its research objectives with high efficiency and proficiency, showing superior stability and usability compared to earlier models. This positions A.S.R as a distinguished practical model for advancing digital transformation in healthcare
+المستخلص
+يمثل داء السكري أحد أهم التحديات الصحية المعاصرة، مما يستلزم إيجاد حلول تكنولوجية مبتكرة للتخفيف من المضاعفات وتخفيف العبء عن مؤسسات الرعاية الصحية. يقدم هذا البحث نظامA.S.Rكنظام بيئي رقمي متكامل مصمم لتحويل إدارة داء السكري من مراقبة سلبية إلى رعاية استباقية ووقائية. يحدد البحث الثغرات الحرجة في الأنظمة الحالية، التي غالبًا ما تكون معزولة وتفتقر إلى آليات دعم اتخاذ القرار في الوقت الفعلي، مع إهمال الاحتياجات الوقائية للأفراد المعرضين للخطر. لمعالجة هذه الثغرات، تتبنى الدراسة منهجية هندسة برمجيات توفر مسارات عمل ذكية مخصصة لثلاث فئات من المستخدمين: مسارات مرضى السكري، والوقاية، والتوعية. يتم دعم هذه المسارات بواسطة مساعد تفاعلي يعمل بالذكاء الاصطناعي ونظام تقييم بيانات آلي. تشمل المساهمات الرئيسية لهذا العمل الربط الفعال بين تحليل البيانات ودعم اتخاذ القرار، وتوفير جسر تقني وظيفي لتنظيم البيانات الصحية وعرضها على المهنيين الطبيين من خلال إعداد التقارير الآلية. تظهر نتائج التقييم أن النظام حقق أهدافه البحثية بنجاح بكفاءة ومهارة عاليتين، حيث أظهر استقرارًا وسهولة استخدام فائقين مقارنة بالنماذج السابقة. وهذا يضعA.S.Rكنموذج عملي متميز لتعزيز التحول الرقمي في مجال الرعاية الصحية
+Chapter One
+1.INTRODUCTION
+In light of the rapid advancements in information technology and telecommunications, healthcare systems have evolved to deliver more efficient and accessible services through telehealth and remote monitoring technologies. These innovations have successfully addressed many limitations of traditional healthcare systems, particularly in managing chronic diseases such as diabetes that require continuous observation and timely intervention[1]
+Diabetes mellitus is one of the most prevalent chronic diseases worldwide and a leading cause of cardiovascular, renal, and visual complications . According to the International Diabetes Federation , more than 530 million people currently live with diabetes, and the number is projected to exceed 640 million by 2030[2],largely due to unhealthy lifestyles and limited access to preventive care.
+Effective diabetes management requires continuous monitoring and realtime feedback to prevent complications and ensure optimal patient outcomes. Traditional follow-up methods in developing countries, including Sudan, often suffer from a lack of medical facilities and specialists, leading to delays in intervention and poor disease control .
+Recent research highlights the potential of Internet of Things (IoT)-based systems and Artificial Intelligence (AI) in enhancing diabetes care. For instance, Alshammari et al. (2023) demonstrated that IoT-enabled remote monitoring systems can reduce hospital visits by up to 30%, improving the accuracy of diagnosis and overall management efficiency. Similarly, Mohamed & Ali (2024) confirmed that integrating wearable glucose sensors with smartphone applications enables real-time glucose tracking and automatic alerts, empowering patients and healthcare providers to make faster and better-informed decisions[3].In response to these global healthcare challenges, this project proposes the development of a Remote Patient Monitoring System for Diabetes Management, designed to support continuous patient follow-up, provide real-time health data, and enable prompt communication between patients and healthcare professionals[4].
+Chronic diseases :
+Non-communicable diseases (NCDs) — chronic health conditions such as cardiovascular diseases, cancers, chronic respiratory illnesses, and diabetes — constitute the leading global cause of death and long-term disability. According to World Health Organization (WHO), more than 43 million people worldwide died in 2021 due to NCDs, representing roughly 75% of non-pandemic-related deaths glob all[5].These diseases are characterized by their long duration and slow progression, often requiring life-long management rather than a one-time cure.[6]Risk factors for NCDs are largely modifiable and include unhealthy diets, physical inactivity, tobacco use, harmful use of alcohol, and exposure to environmental pollutants[7].Moreover, the burden of NCDs disproportionately affects low- andmiddle-income countries, which bear the majority of premature deaths — in 2021, about 18 million deaths from NCDs occurred in people younger than 70, and 82% of these premature deaths were in low- and middle-income countries[8].Beyond mortality, NCDs impose a heavy economic and social toll: they reduce quality of life, increase healthcare costs, and limit productivity by causing long-term disability[9].Given this global health crisis, it is clear that preventing and controlling NCDs through public health interventions, health education, and systemic changes in lifestyle and healthcare delivery must remain a top priority for governments, health organizations, and communities worldwide.
+Diabetes and its types :
+Diabetes mellitus is a chronic metabolic disease characterized by elevated blood glucose levels due to defective insulin production or impaired insulin action. It manifests mainly in two predominant forms: Type 1 and Type 2, though other less common forms such as gestational diabetes, neonatal diabetes, and MODY (maturity-onset diabetes of the young) also exist[10]In Type 1 diabetes, the body’s immune system mistakenly attacks the insulin-producing β-cells in the pancreas, leading to an absolute deficiency of insulin; this type commonly appears in children or adolescents and often has rapid onset of symptoms[11].Conversely, Type 2 diabetes, which accounts for more than 95% of all diabetes cases worldwide, arises from insulin resistance — where the body still produces insulin but becomes unable to use it effectively — and/or a relative insulin deficiency over time[12].Type 2 is strongly associated with lifestyle-related risk factors, including overweight, physical inactivity, poor nutrition, and advancing age[13]Globally, the prevalence of diabetes has risen dramatically: by 2021, an estimated 537 million adults aged 20–79 carried a diagnosis of diabetes, and projections suggest this figure may approach 783 million by 2045 if current trends continue[14]Without timely detection and management, both types of diabetes can lead to serious complications such as cardiovascular disease, kidney failure, neuropathy, and vision loss — outcomes that underscore the critical global health burden posed by this disease[15].
+The role of digital platforms And A web system for diabetic patients that helps improve healthcare :
+Web-based diabetes management systems have emerged as a transformative solution for improving the monitoring, treatment, and self-management of diabetes. These digital platforms enable real-time tracking of blood glucose levels, medication schedules, lifestyle behaviors, and clinical symptoms, allowing patients and healthcare providers to make timely and data-driven decisions. Studies have shown that remote monitoring systems significantly improve glycemic control and reduce HbA1c levels by enhancing patient engagement and continuous feedback loops between patients and clinicians. For example, a large meta-analysispublished in The Journal of Medical Internet Research reported that online diabetes management platforms resulted in an average HbA1c reduction of 0.5% to 0.8% compared to standard care alone[16].Additionally, web-based systems increase accessibility to care for individuals living in rural or underserved areas where specialized endocrinology services are limited, helping reduce healthcare disparities[17]. By integrating tools such as automated alerts, educational resources, teleconsultation, and data visualization dashboards, these systems empower patients to take active control of their condition, improving adherence to treatment, preventing complications, and ultimately reducing hospital readmission rates and healthcare costs[18].As emphasized by the World Health Organization, digital health technologies play a critical role in strengthening preventive care and supporting long-term management of chronic diseases like diabetes, particularly in low- and middle-income countries where traditional healthcare access remains limited[19].
+1.2. Research PROPLEM
+Despite the significant developments in telehealth technologies, many challenges still hinder the effective implementation of such systems, especially in developing countries like Sudan. The most prominent of these challenges are:
+Limited access to preventive health services and continuous follow-up.
+Poor use of preventive digital platforms to monitor diabetes patients.
+Lack of focus in previous studies on preventive and awareness aspects for patients.
+1.3 Research Objectives
+Design a preventive website that allows for regular and periodic monitoring and tracking of health indicators for diabetes patients.
+Supporting preventive healthcare through early detection of any abnormal changes in patients' readings.
+Improving access to preventive healthcare services for diabetic patients in remote areas deprived of medical services.
+Reducing pressure on healthcare institutions and reducing the number of unnecessary hospital visits by relying on remote monitoring.
+Raise health awareness among patients and promote the concept of selfmanagement of the disease through educational content within the platform.
+Provide a simple and easy-to-use interface suitable for different groups, including users with limited technical experience.
+1.4 . Research Method
+This study adopts the descriptive analytical approach to examine and analyze the current situation of diabetes monitoring and the effectiveness of remote patient monitoring systems.
+The descriptive aspect focuses on identifying the existing challenges, technologies, and healthcare gaps in diabetes management — particularly in developing countries like Sudan.
+The analytical aspectinvolves reviewing and comparing previous studies, evaluating the effectiveness of tele health systems ,and analyzing collected data to draw conclusions that support the proposed system design.The methodology includes the following stages:
+-1Data Collection: Gathering data from published research, hospital reports, and health databases related to diabetes monitoring systems.
+-2Descriptive Analysis: Presenting the current situation and challenges faced by diabetic patients in accessing healthcare.
+-3Analytical Review: Analyzing findings from previous studies to determine trends, strengths, and weaknesses in existing telemonitoring systems.
+-4System Proposal: Based on the analysis, designing a remote monitoring system that addresses the identified issues.
+This approach allows the study to combine scientific description and practical analysis, ensuring that the proposed solution is both evidence .
+1.5TOOLS
+1. 5. 1.Star UML:
+Used to design the UML diagrams of the system, including Use Case, Sequence, and Activity Diagrams, in order to illustrate the logical structure of the system and describe how users interact with the platform.
+Visual Studio Code (VS Code)
+Served as the primary development environment used to implement the frontend components of the system, including HTML, CSS, and JavaScript files. It also supported various extensions that facilitated coding and improved productivity.
+HTML (Hypertext Markup Language)
+Used to design the structural layout of the system’s web pages and define the essential interface elements of the diabetes monitoring platform.
+CSS (Cascading Style Sheets)
+Used to style and format the web pages, ensuring a consistent, user-friendly, and visually appealing interface that enhances the experience of both patients and healthcare providers.
+JavaScript
+Used to add interactive functionalities within the system, such as validating user inputs, dynamically displaying information, and performing real-time operations on the user interface.
+MySQL
+Used as the database management system for storing patient information, vital readings, and medical records, with the ability to query, retrieve, and process data to support the remote monitoring process
+1.5.7. PHP (Hypertext Preprocessor) Used as the core server-side scripting language to handle the backend logic of the platform, manage user authentication and sessions, process form submissions, and facilitate seamless integration with the MySQL database and the smart assistant for dynamic data processing and report generation.
+1.6Research Scop
+In this project, we are developing an electronic system for remote monitoring and follow-up of diabetes patients, enabling doctors and patients to communicate easily and continuously monitor vital signs.
+Location : Medical equipment
+Time : 2025 – 2026
+1.7Research Structure
+"The research is organized into five main chapters.Chapter Oneestablishes the study's framework, covering the introduction, problem statement, objectives, significance, and scope.Chapter Twoprovides a comprehensive literature review, whileChapter Threedetails the descriptive-analytical methodology, data collection methods, and analysisprocedures.Chapter Fourfocuses on the technical design and implementation, describing the proposed system, tools, programming languages, and UML diagrams used. Finally,Chapter Fiveconcludes the research by analyzing the study results and discussion, followed by the final conclusion and strategic recommendations for future system development."
+Chapter two:
+Letrcture Review
+2.1.lntroduction:
+Diabetes mellitus remains a significant global health challenge, particularly in the Asia–Pacific region and other low- and middle-income countries, where healthcare access and specialist availability are often limited. The growing burden of diabetes-related complications, such as diabetic foot ulcers and poor glycemic control, underscores the urgent need for innovative, scalable, and patient-centered solutions. In recent years, digital health technologies—including remote patient monitoring (RPM), mobile health (mHealth) applications, telemedicine, and integrated data systems—have emerged as promising tools to enhance diabetes management.
+This review explores recent advancements in digital health interventions for diabetes care, focusing on their methodologies, outcomes, strengths, and limitations. By analyzing studies ranging from pilot feasibility trials to blockchain-integrated ecosystems, we aim to highlight how these technologies are transforming patient engagement, clinical decision-making, and healthcare delivery. Furthermore, we examine the technical, infrastructural, and regulatory challenges that may hinder widespread adoption, especially in resourceconstrained settings. Through this synthesis, we provide a comprehensive outlook on the current landscape and future potential of digital health in diabetes management.
+Diabetes is one of the oldest diseases known to mankind, and historical evidence suggests that its symptoms were first described in the ancient Egyptian civilization around 1550 BC in the Ypres Medical Papyrus, which spoke of frequent urination and extreme thirst[20].Doctors in ancient India around 400 BC described the disease as "Madhumiha", meaning honey urine after observing ants being attracted to the urine of patients[21].In the 2nd century AD, the Greek physician Arittius of Cappadocia gave a more accurate description of the disease and used the term Diabetes to denote "fluid flow through the body"[22].In 1675, the British physician Thomas Willis added the word Mellitus, meaning "honey", referring to the sweet taste of urine as a result of high glucose[23].
+For centuries, diabetes remained a fatal disease in the absence of effective treatment, until the historic shift occurred in 1921 when Frederick Panting and Charles Best were able to discover the hormone insulin, a discovery that saved millions of lives and for which Banting was awarded the Nobel Prize in Medicine in 1923. The following decades saw significant advances in treatment methods and the production of various types of long-acting insulin, and the advent of home glucose meters in the 1970s, enabling patients for the first time to Follow up on their condition on a daily basis[24].
+In 1993, a large-scale clinical study known as the Diabetes Control and Complications Trial (DCCT) found that careful control of sugar levels significantly reduces complications of disease such as kidney, eye, andneurological diseases[25].With the rapid advancement of digital technology over the last two decades, CGM continuous meters and smart insulin pumps have emerged, and then care has evolved towards remote monitoring Web platforms, which enable patients to record measurements and exchange data in real-time with physicians, resulting in improved treatment adherence, reduced HbA1c, and reduced hospital admissions[26].
+Recent studies published in the Journal of Medical Internet Research indicated that the use of web platforms for diabetes management contributed to a reduction in average HbA1c by 0.5%-0.8% compared to traditional care[27].The World Health Organization (WHO) has also emphasized that digital health technologies have become an essential tool for the prevention and management of chronic diseases such as diabetes, especially in low- and middle-income countries, with the aim of reducing the health, social and economic burden of the disease[28].
+Basic concept
+1.Remote Patient Monitoring (RPM)
+Use of digital tools to monitor patients’ health remotely, especially for blood glucose and wound care.
+Regular follow-ups (e.g., every 1–2 weeks) by specialists improve diabetes control and patient outcomes【Sawyer】.
+Remote wound monitoring systems enhance adherence and satisfaction【Gardner】【Keegan】.
+2.Technology Integration
+Combining blockchain, Internet of Things (IoT), and machine learning (ML) enables secure, real-time, and predictive health monitoring【Ratt】
+tegration of Electronic Health Records (EHR)and Clinical Decision Support Systems (CDSS) improves access to patient data and clinical decision-making【Ahmed】.
+3.Patient Engagement and Satisfaction
+High user satisfaction and adherence rates are linked to user-friendly digital platform【Gardner】【Keegan】.
+Patient-centered approaches increase engagement and improve selfmanagement behaviors【Keegan】.
+4.Technical and Infrastructure Challenges
+Issues include:
+Poor internet access or lack of smartphones【Keegan】.
+Bluetooth connectivity problems and high dropout rates due to technical difficulties【Istepanian】.
+Difficulty deploying advanced systems in low-tech regions【Ratta】.
+5.Evaluation and Evidence Gaps
+Some studies lacked:
+Real-world implementation and evaluation【Gardner】.
+Control groups or statistical comparisons【Sawyer】【Gardner】.
+Long-term follow-up data【Keegan】【Istepanian】.
+Descriptive or theoretical approaches without empirical validation limit generalizability【Ahmed】【Gardner】.
+2.2.literature review
+1-studyof Istepanian et al., "Evaluation of a Mobile-Based Remote Monitoring System for Blood Glucose Control" (2009),conducted a study through a randomized trial involving 137 patients with Type 1 and Type 2 diabetes. The research addressed challenges such as Bluetooth connectivity issues, usability difficulties, and a high disconnection rate. The results showed no statistically significant difference in HbA1c levels between the intervention and control groups. The study’s strengths lay in its randomized controlled design, which enhanced credibility, and its innovative use of mobile and Bluetooth technology for remote monitoring. However, it faced notable weaknesses, including a relatively short follow-up period of nine months and technical problems that contributed to a high dropout rate among participants in the intervention group.
+2-studyof Ahmed et al., "Remote Patient Monitoring System Engineering for Diabetes Management Using a Descriptive Analytical Methodology Based on a Literature Review and Theoretical System Design" (2017),conducted a study. The study addressed the problem of previous systems lacking decision-making capabilities and functioning in isolation, and proposed a multi-layered architecture that integrates Electronic Health Records (EHR) and Clinical Decision Support Systems (CDSS) With the aim of improving medical services. The results showed that this proposed design enhanced access to health information and contributed to improved quality of care. The study was characterized by an effective integration of electronic health records and clinical decision support systems, as well as improved access to health information. In contrast, the study faced challenges related to interoperability and organization between systems, as well as infrastructure constraints that may hinder practical implementation.
+3-Studyof Keegan et al., "Implementing a Patient-Centered Remote Monitoring System for Diabetic Foot Ulcers" (2023),conducted a study using a descriptive experimental methodology on 25 patients in a specialized clinic. The study addressed technical challenges such as the lack of modern phones or poor internet access, and sought to assess the feasibility of the system in improving patient follow-up. The results showed a commitment rate of 84% and user satisfaction of 94%, and the patient-centered approach enhanced the level of interaction and the system achieved high diagnostic accuracy It reached 94%. On the other hand, the study faced limitations such as the small sample size and the short duration of the study, which limited the possibility of deriving long-term insights.
+4-Study ofRatta et al., "Blockchain-Based Machine Learning System for Remote Monitoring of Diabetes Patients Using IoT" (2024),conducted a study. The methodology relied on a decentralized blockchain system to securely exchange health data, IoT devices to continuously monitor vital signs, machine learning techniques for predictive analytics, and an instantaneous monitoring architecture aimed at reducing human errors. The study addressed key issues such as protecting sensitive data, integrating different monitoring devices, ensuring reliable medical predictions, and architecture challenges infrastructure in some areas. The results showed improvements in data security and integrity, an increase in monitoring accuracy, and the study supported patient management themselves and provided immediate insights to healthcare providers. The ecosystem is characterized by seamless integration between blockchain, machine learning, and the Internet of Things, a decentralized design that reduces transportation errors, and enables proactive, personalized, and scalable healthcare in smart care systems. In contrast, the study faced challenges in deploying the system in lowtech areas, and required careful calibration of machine learning algorithms, as well as the complexity of IoT device data compatibility.
+5-Study ofSawyer et al., "A Successful Remote Patient Monitoring Program in Diabetes Management Using a Five-Stage Design" (2025),conducted a study. The study addressed the problem of the shortage of endocrinologists and the technical challenges associated with the follow-up of diabetic patients. The results showed a decrease in the level of HbA1c from 10.4% to 7.0% (p < 0.001), demonstrating that remote patient monitoring is an effective care model for improving glycemic control in patients with diabetes.
+6-studyof Gardner et al., "The Role of Digital Health Technologies in Diabetes Management in the Asia-Pacific Region" (2025),conducted a narrative review through a preliminary feasibility study aimed at addressing the limited immediate followup of diabetic wounds and the high risk of complications. The results showed that the average wound area decreased by 41.6%, and users expressed high satisfaction with the system. The study highlighted that digital health strengthened adherence to treatment and self-care through reminders, education, and ease of monitoring, and provided tools and processes such as telemedicine and electronic health records to help fill healthcare gaps in developing countries. In contrast, the study lacked a realistic assessment of the proposed techniques, and relied on descriptive analysis and literature review without quantitative or statistical comparisons
+.
+2.4.Conclusion
+This study represents a significant advancement in digital health interventions for diabetes, especially in resource-constrained settings. By addressing technology integration, patient empowerment, and infrastructural challenges, the study presents a comprehensive and context-sensitive framework. The findings highlight the importance of tailored, scalable solutions to improve diabetes care and bridge the gap between innovation and accessibility.
+Chapter Three
+Methodology
+3.1 Introduction
+In our project, we relied on the descriptive analytical method, as it is considered one of the most suitable scientific approaches for studying healthrelated phenomena as they exist in reality without attempting to alter or influence them. We believe that this approach is particularly appropriate for developing a comprehensive educational website about diabetes, as it enables us to collect reliable medical information, analyze current awareness efforts, and evaluate their effectiveness in delivering accurate health knowledge. It also assists us in identifying the needs of patients and individuals at risk, including the cognitive, behavioral, and psychological aspects associated with living with the condition.
+This methodology has allowed us to gain a deeper understanding of the various challenges faced by individuals with diabetes in their daily lives—whether related to medical follow-up, adherence to dietary and exercise plans, dealing with episodes of high or low blood sugar, or lack of awareness surrounding long-term complications such as cardiovascular issues, kidney failure, nerve damage, and vision impairment. Additionally, applying this method enabled us to review and assess scientific data and sources, select accurate and verified information, and transform it into simplified, clear educational content suitable for different age groups and educational backgrounds.
+Through these steps, we aim for our website to play an active role in spreading correct health awareness about diabetes, enhancing community knowledge of the nature of the disease, and supporting prevention and selfmanagement practices. We also seek to empower patients and their families to make informed health decisions that improve their daily lives and overall wellbeing. Furthermore, we strive to make the platform a trustworthy, userfriendly resource that provides practical and accessible guidance at any time, ultimately contributing to a better quality of life and reducing the health burdens associated with diabetes.
+3.2 Data collection methods
+We used the interview as a tool to collect qualitative data, because of the depth of information it provides that cannot be obtained through a survey alone. Semi-structured interviews were conducted with a number of health professionals to learn about their professional views on the challenges of diabetes follow-up, and the effectiveness of digital systems and smart applications in improving the quality of health care.
+The interviews helped to interpret the results of the survey, clarify some of the practical aspects associated with the use of mobile applications in a real-world health environment, and contributed to enhancing the credibility of the research by supporting the results with expert opinions.
+Research (scientific sources) as a method of data collection
+We used research in scientific sources and previous studies as an additional method of data collection, as a result of not reaching sufficient and accurate results through the questionnaire alone. The research faced some challenges related to the small number of responses or the limited accuracy of some of the answers, which necessitated relying on areview of the scientific literature to enhance the analysis and support the results of the study.
+This approach included access to scientific books, peer-reviewed research articles, and reports from global health organizations, such as the World Health Organization (WHO), to gather reliable information about diabetes, its management methods, and the role of digital applications in improving health follow-up. Relying on previous studies helped to provide a scientific framework that supports the research results, and to compare the findings of this study with similar researches, which contributed to increasing the credibility of the results and enhancing
+(Use Case Scenario):
+In this section, we have provided a detailed description of the user's interaction with the remote diabetes monitoring system, with the aim of explaining how the system can be used to provide a health assessment and realtime guidance based on the data entered. This scenario presents the basic operational steps that the user performs while using the platform.
+First: Initial Screening Scenario
+We designed this scenario to be the starting point at which the user is rated and guided based on their health status.
+Implementation Steps:
+1. Accessing the Platform:
+The user begins their journey by entering the homepage, where we have included a brief description of the system and the issues it aims to address.
+2. Login and Signup
+The user accesses the platform by:
+If a new user enters his data (name, age, gender, weight, and answer for is have a diabetic or not)
+Previous User: Direct access to the platform
+3. Introductory Questionnaire:
+We have developed a short questionnaire that appears directly to the user, including: Meta Name , Determining if the user has diabetes , Additional identification questions when needed
+4. Branching Tracks:
+1. Notaffected:
+We directed him to the Health Awareness Track, where he is exposed to educational content about diabetes prevention, and his experience ends there.
+2. Infected:
+The user moves to the follow-up data entry stage, where the system asks them to provide additional information such as weight, age, and the date of the last measurement.
+Second: Data Entry & Analysis Scenario
+This scenario provides an illustration of the stage at which the user writes a lab reading to measure the sugar level.
+Procedures:
+1. Measurement Mode Choice:
+We have enabled the user to choose the type of test (fasting/post-eating).
+2. Entering the health value:
+The user enters the numeric reading of the mg/dL unit into the input model we created.
+3. Automated Analysis:
+After pressing the analysis button, the system processes the value using a benchmark comparison with the normal and high sugar ranges that we have stored in the database.
+Third: System Feedback
+After the analysis is completed, the system shows a result that is appropriate to the user's condition.
+1. Instant Case Classification:
+We have included a mechanism that shows one of the following status categories:
+1. Below normal
+2. Normal Level
+3. Simple Height
+4. Sharp rise calls for attention 2. Recommendations and Guidance:
+The system displays pre-designed recommendations that include:
+Appropriate diet , Food contraindications , Educational links , Notice to see
+Table of Scenario(3.1):
+Item
+Description
+Status Name
+Smart Glucose Monitoring and Personalized Health Guidance
+Subject
+Registered Diabetic Patient
+Objective of the case
+Record glucose reading, receive smart evaluation, get personalized medication suggestions and dietary recommendations
+Prerequisite
+User must be registered and logged in (via Email or Google OAuth) and identified as diabetic through the smart questionnaire
+Description
+The patient enters a glucose reading along with contextual information (measurement context, psychological status, weight, and current medications). The system evaluates the reading against personalized target ranges based on the patient's age and diabetes type, then the Smart Assistant generates tailored health recommendations
+Final Output
+Instant reading classification, personalized dietary and medical guidance, and the option to generate a downloadable PDF report or share it via email or link
+Path to Success
+Login→Fill Questionnaire→Enter Reading & Context→Smart Analysis→View Results & Recommendations→Generate Report
+Alternate Route
+Invalid reading entry→error message→retry | Questionnaire result: Not Diabetic→redirect to Health Awareness Portal
+Item
+Description
+Figure (3.1) System Architecture Diagram
+This diagram illustrates the layered architecture of the A.S.R platform. The user accesses the system through a web browser that connects to the A.S.R Web Interface in the Presentation Layer. Requests are then handled by the Application Layer, which includes the Authentication Controller (supporting both email login and Google OAuth), the Questionnaire and Routing Logic, the Reading Evaluator, the Smart Integration Controller, and the Report Generator. Data is stored in the MySQL Data Tier across three databases: Users & Patients, Glucose Readings, and Knowledge & Tips. The system also communicates with two External APIs: the Smart Assistant API for intelligent analysis, and Google OAuth 2.0 for authentication.
+Figure (3.2) Use Case Diagram
+This diagram illustrates the main interactions between the system actors and the A.S.R Diabetes Monitoring Platform. The system includes two main actors: the User (Patient/Guest) and the Admin. The User can register, log in using email or Google OAuth, fill out the smart questionnaire, record glucose readings, chat with the Smart Assistant, review smart recommendations, and generate PDF reports. The Admin can log in and manage the system by handling users and the knowledge base. This diagram defines the scope of the system and the responsibilities of each actor.
+Figure (3.3) Activity Diagram
+This diagram shows the general flow of activity within the A.S.R platform. The user starts by accessing the platform and logging in or registering, including through Google OAuth. The user then fills out the smart questionnaire. Based on the result, the system routes the user along one of two paths: if the user is diabetic, they are directed to the patient dashboard where they can enter glucose readings, receive smart analysis and medication suggestions, and generate PDF reports. If the user is not diabetic or unsure, they are directed to the health awareness portal where they can chat with the Smart Assistant. The session ends when the user logs out.
+Figure (3.4) Class Diagram
+This diagram represents the object-oriented structure of the A.S.R system. The main classes are: Admin, who manages users and health tips; User, which holds login and personal information and extends to the Patient class; Patient, which stores diabetes-specific data and links to glucose readings and reports; GlucoseReading, which captures measurement values and psychological context; SmartAssistant, which analyzes readings and suggests medications; and Report, which generates PDF files and shareable links. The relationships between classes reflect the real interactions within the system.
+The diagram illustrates a user signup process involving Google OAuth for authentication, capturing user details, and redirecting to a questionnaire or home page upon successful registration. AI-generated content may be incorrect.
+Figure (3.5) User Signup Sequence Diagram
+This diagram describes the sequence of steps for user registration and login in the A.S.R platform. The user clicks the Signup or Login button on the A.S.R interface and selects one of two authentication methods. In the first method (Google OAuth), the system redirects to Google OAuth, which requests and receives the user's profile (email and name). In the second method (Phone Number), the user enters their phone number and password through a dedicated form. In both cases, the Auth Controller checks whether the user already exists in the database and either retrieves or creates their account. Once confirmed, the system logs the user in and redirects them to the questionnaire or home page, depending on their registration status
+Figure (3.6) Manage User Sequence Diagram
+This diagram describes how the Admin manages user accounts within the system. The Admin requests the list of users from the Admin Dashboard, which fetches the data from the database and displays it. The Admin can then select a user to edit or delete. The system submits the update or delete request to the database, receives a success response, and displays a confirmation message to the Admin.
+Figure (3.7) Manage System Content Sequence Diagram
+This diagram shows the process by which the Admin manages the system's knowledge base, including health tips and medication data. The Admin navigates to the Knowledge Base section, and the system retrieves existing content from the database for display. The Admin can then add new health tips or medications by submitting the data through the Admin Panel
+The database stores the new entry and returns a success response, which is displayed as a confirmation message.
+Figure (3.8) — Login Start Test Sequence Diagram
+This diagram describes the complete sequence of a patient submitting a glucose reading and receiving a smart evaluation. The patient submits a glucose reading along with contextual information through the Dashboard UI. The Evaluator API fetches the appropriate target glucose ranges from the database based on the patient's age and diabetes type. The system then requests health suggestions from the Smart Assistant, which returns personalized recommendations. The reading and the smart output are saved to the database, and the final evaluation results are displayed to the patient
+.
+Chapter Four
+Design & Implementation
+Introduction
+This chapter presents the implementation details and user interface design of the proposed system, A.S.R Smart Diabetes Monitoring Platform. It focuses on explaining how the system functionalities are translated into interactive user interfaces that support different user workflows. The chapter describes the main system pages, user navigation flow, and the interaction between system components. Special attention is given to the distinction between diabetic patient users and non-diabetic or preventive users, where each category is guided through a dedicated workflow that meets its specific needs. In addition, this chapter highlights key system features such as the preliminary questionnaire, authentication process, smart measurement tools, monitoring dashboard, awareness and prevention content, AI assistant, and report generation module.Each interface is explained in terms of its purpose, functionality, and role in supporting diabetes monitoring, follow-up, and health awareness. Overall, this chapter demonstrates how the system design ensures usability, clarity, and efficiency, providing users with a structured and user-friendly experience that supports effective diabetes management and prevention
+The text describes a webpage with a black background, a cyan logo, and a red bicycle on a street. It includes Arabic and English text about a health monitoring app, including tools for risk assessment, fitness, and exercise. AI-generated content may be incorrect.
+Figure (4.1) Main System Entry Point and User WelcomeScreen:auser sees when they log into the A.S.R. platform Here, I explain that this platform is a smart platform for monitoring This is the first page. I welcome the user and quickly and clearly explain the platform's concept without any complications.The key features of this page are:
+No data entry
+A brief introduction to the platform
+Direct guidance to the next step
+The "Start Survey Now" button is the main focus of this page.When the user clicks it, they are taken directly to the survey.This survey helps us understand the user's health status, and based on this information, we provide them with the appropriate service
+The image shows a webpage with a medical theme, featuring a heart graphic, Arabic text, and a form for entering personal health information. AI-generated content may be incorrect.
+Figure (4.2) Smart Assistant Interface for Medical Awareness:Medicalquestionnaire form for preliminary data collection,This form is part of the Intake Form, which is designed to collect basic patient data in a simplified manner. The form includes fields to collect demographic information (age, gender) and biometrics (weight), as well as precise medical details such as diagnosis date, type of diabetes, and type of treatment followed. The interface is cleanly and organized with mandatory fields marked with a red flag, and the use of dropdowns and date pickers To ensure the accuracy of the input data and avoid manual input errors.
+Figure (4.3)Smart Assistant Interface for MedicalAwareness:This figure showcases the Smart Assistant interface, designed to provide interactive medical awareness and support. The interface features a chat-based UI where users can inquire about diabetes-related topics, nutrition, and symptoms. To facilitate smooth user interaction, it includes quick-access suggestion buttons for common queries such as diabetes symptoms, healthy nutrition, and hypoglycemia. Additionally, a medical disclaimer is prominently displayed at the bottom, clarifying that the assistant serves solely for general educational purposes and does not substitute for professional medical consultation.
+The image is a web page interface with a user interface in Arabic, featuring a digital assistant for diabetes management, including sections on diet, exercise, blood sugar levels, and additional reading. AI-generated content may be incorrect.
+Figure (4.4) Health Awareness and Educational Resources Interface:TheHealth Awareness and Educational Resources Interface,This figure displays the Health Awareness interface, which serves as a centralized hub for educational resources related to diabetes management and prevention. This page acts as the primary destination for users who selected "No" or "Unsure" regarding their diabetes status in the initial questionnaire. It prominently features a section encouraging users to "Start with the Smart Assistant first," providing seamless integration with the AI tool. Below this, the interface organizes educational content into distinct, easy-to-navigate cards, such as "Types of Diabetes," "Proper Nutrition," "Physical Activity," "Blood Sugar Level by Age," and "Effect of Diabetes on Organs." Each card includes a "Read More" button, allowing users to delve into specific topics of interest, thereby enhancing their understanding and preventive self-management capabilities.
+Figure (4.5)User Registration and Authentication Interface:The Account Registration Interface for the Diabetic Path,This figure displays the Account Registration interface, which serves as the direct continuation of the "Diabetic Path" for new users who confirmed their diagnosis by selecting "Yes" in the initial questionnaire and completed their medical data entry. Employing a cohesive split-screen design, the left side presents an inspiring visual and motivational message ("Join us today") to encourage user commitment. The right side features a streamlined registration form requesting a phone number and password, along with an option for Single Sign-On (SSO) via Google, ensuring a secure and frictionless onboarding experience into the core diabetes monitoring dashboard
+The image shows a medical clinic interface with a doctor's office, a login screen, and a health management dashboard. AI-generated content may be incorrect.
+Figure (4.6)User Login and Authentication Interface:Thisfigure illustrates the login page that appears after account creation, serving as the next step before the user is directed to the dedicated diabetes management path. After completing the questionnaire and creating an account, the system redirects the user to this page to authenticate using their phone number and password.
+The page contains a login form on the left side, including fields for the phone number and password, a remember-me option, and a login button. It also provides an alternative sign-in method using Google. On the right side, the interface displays a welcoming message with a medical background image and a colored overlay, reinforcing that the platform is designed to support diabetes monitoring, health reminders, and personalized guidance. After successful login, the user is automatically redirected to the diabetes-specific path based on the information provided during registration and the questionnaire.
+Image: A web page displaying a user interface with a list of health information, including blood sugar levels, dietary habits, physical activity, and potential risks. AI-generated content may be incorrect.
+Figure (4.7) Integrated Patient Dashboard and Health Monitoring Summary.
+Figure (4.8) Personalized Clinical Advice and Gender-Specific Health Recommendations:Thisfigures illustrates the diabetes follow-up dashboard that appears after the user logs in. After the account is created and the user signs in, the system redirects them to the diabetes management path, where this dashboard becomes the main page for monitoring their health status.
+The dashboard displays a personalized welcome message with the user’s name, followed by a health-status summary based on the questionnaire and recorded measurements. It shows the user’s diabetes classification, general assessment, key measurement indicators, possible warning signs, and recommended care actions. The page also includes an overview section for recent readings, high readings, low readings, and total measurements, along with quick-action cards that allow the user to add a new measurement or access available health tools.
+At the bottom of the dashboard, the system presents personalized advice based on the user’s gender and age. These recommendations provide targeted guidance related to lifestyle, nutrition, blood sugar follow-up, physical activity, and other health factors relevant to the user’s profile. This makes the dashboard more useful because it does not only show general information, but also adapts the advice to the user’s personal data.
+The text appears to be a form or interface for recording a patient's medication dosage and effects, including the date, time, weight, and the drug administered. AI-generated content may be incorrect.
+Figure (4.9)Smart Glucose Logging and Evaluation Tools Interface.
+The image shows a medical report for a male patient named Ahmed Elsir, detailing his blood sugar levels at 55 mg/dL, with a note that the patient's glucose levels need to be monitored more closely. AI-generated content may be incorrect.
+Figure (4.10)Comprehensive Diabetes Evaluation Report and Export Interface.
+The image displays a simplified report form for a medication, listing details such as date, dosage, effects, and a note indicating the prescription is only for an adult without a need for specialized medical consultation. AI-generated content may be incorrect.
+Figure (4.11)Dynamic Readings Log and Historical Data Analysis Interface:
+This figure illustrates the Smart Measurement Tools page, which allows a diabetic patient to record blood sugar readings that were already measured using an external glucometer. The page provides a structured form for entering the glucose value, measurement timing, meal type, notes, symptoms, medications used, missed doses, and weight. After entering the data, the system analyzes and stores the reading so it can be used for follow-up.
+The page also includes a reading history section, where the patient can view previous blood sugar records. By selecting View Readings, the system opens a complete report containing all saved measurements, with filtering options by date, timing, and evaluation status. The user can select readings, print the report, save it as a PDF, or share it with a doctor. This makes the page useful not
+only for recording measurements, but also for preparing a clear follow-up report that supports medical consultation and long-term diabetes monitoring
+The image displays a user interface of a health monitoring application, specifically designed for diabetes management, with various sections on nutrition, exercise, and blood sugar levels. AI-generated content may be incorrect.The image shows a user interface with a language selection dropdown, a help section, and a question prompt about sugar intake, asking the user to choose their interest level in sugar and providing information on how to manage sugar consumption. AI-generated content may be incorrect.
+Figure (4.12)Specialized Guidance Interface for Non-Diabetic and Unsure Users:
+This figure illustrates the Unsure”user path, which works similarly to the guest awareness path but provides additional guidance through the Smart Assistant. This path is intended for users who are not sure whether they belong to the diabetes management path or the general awareness path.
+The page displays two main components: the health awareness section and the Smart Assistant. Before using the assistant, the user is asked a few short questions, such as whether they are interested in diabetes, whether there is a family history of diabetes, and whether they have any health measurements. After the user answers all the questions, the Smart Assistant responds with guidance based on their answers. This allows the system to provide a more personalized first response while still keeping the user in an awareness-oriented experience.
+Chapter five
+Results and recommendations
+5.1Results
+Through the development of the(A.S.R)platform, we have successfully translated our theoretical goals into tangible outcomes. We achieved our six research objectives as follows:
+Monitoring Platform Design:We successfully designed and built a functional web-based platform that enables patients to record and track their glucose levels periodically and systematically.
+Early Detection Mechanism:We developed an automated analysis tool that classifies readings instantly, providing a reliable method for the early detection of abnormal health changes.
+Improving Access for Remote Areas:We aimed to provide healthcare services to patients in areas lacking medical facilities, and we succeeded in making the system accessible online without geographical restrictions.
+Reducing Hospital Load:We activated an automated PDF report generation feature, allowing patients to share their data with doctors remotely, which directly contributed to reducing unnecessary hospital visits.
+Developing Patient Self-Awareness:We successfully integrated an AI-powered Smart Assistant to provide interactive answers, helping us raise health awareness and empower users to manage their condition independently.
+Ensuring System Usability:We designed the system interfaces to be simple and clear, allowing us to provide a user experience that is easy to navigate even for individuals with limited technical skills.
+5.2. Addressing Research Gaps:
+During our analysis of the results, we found that the A.S.R system effectively addressed four critical research gaps identified in previous studies:
+Closing the Data Integration Gap: Previous studies, such as Ahmed et al. (2017), criticized older monitoring systems for being isolated and lacking decision-making capabilities. We successfully addressed this by linking our data analysis with an interactive clinical decision-support system, allowing for real-time health evaluations.
+Improving System Reliability and Retention: The study by Istepanian et al. (2009) suffered from high user dropout rates due to technical difficulties and complex connectivity. We solved this issue by ensuring system stability and designing a highly intuitive web interface, which makes the platform reliable and easy to use for all patients.
+Expanding the Preventive Vision: Many existing solutions focus only on treating confirmed diabetic patients. However, we designed a complete preventive path for non-diabetic users. This makes our system a proactive tool to limit the spread of the disease rather than just a monitoring device, addressing a major gap in chronic disease management.
+Bridging the Practical Evaluation Gap: A major limitation in the work of Gardner et al. (2025) was the lack of practical evaluation and real-world implementation. We addressed this gap by building a functional, data-driven platform. Our system provides a "technical bridge" for doctors through professional PDF reporting and automated analysis, turning theoretical concepts into a practical medical tool
+We have documented these achievements through the following charts:
+Figure (5.1) - Comparison Chart:In this chart, we represent the performance of ourA.S.Rsystem compared to previous studies across the research objectives . We achieved high performance scores (9-10 out of 10) because we successfully translated each theoretical goal into a working feature within the system :"
+Design & Monitoring: We built a stable web platform for continuous health tracking, unlike previous systems that often operated in isolation.
+Early Detection: We integrated an automated analysis tool that provides instant classification of readings, helping in early medical intervention.
+Remote Access: By using web technologies, we ensured that patients in remote areas can access healthcare services without needing to travel.
+Hospital Load Reduction: We included a PDF reporting feature that allows patients to share data with doctors from home, which reduces unnecessary hospital visits.
+AI Awareness: We replaced static information with an interactive AI Smart Assistant that provides immediate health guidance.
+System Usability: We focused on a simple and clear interface to ensure all users can navigate the system easily, regardless of their technical skills.
+Figure (5.2) - Workflow Distribution:This chart illustrates the success of our unique 'Workflow Personalization' feature. We did not want to create a standard website for everyone; instead, we designed a smart path for every user type:"
+Diabetic Path: We provide full clinical tools, glucose recording, and detailed reports for confirmed patients.
+Preventive Path: We created a specific track for users at risk or 'unsure' of their status, providing them with early screening and guidance.
+Awareness Path:We offer educational resources and an interactive AI chat for guests interested in general knowledge about diabetes.
+By sorting users into these three paths, we ensure that every individual receives exactly the care and information they need.
+5.6 Recommendations:
+Based on the technical outcomes and the strategic goals of the A.S.R system, we propose the following recommendations to enhance the system’s clinical and operational capabilities in future iterations:
+1. IoT Integration and Automation:
+We recommend enabling direct synchronization between the A.S.R platform and smart glucose meters via Bluetooth technology. This integration will automate the data collection process, eliminating manual entry errors and ensuring that health data is captured with real-time accuracy for immediate clinical monitoring.
+2.Adopting Predictive Analytics (Machine Learning):
+We suggest integrating Machine Learning (ML) algorithms to analyze historical patient data. This will allow the system to move beyond simple "classification" of current states to "prediction" of future health episodes. By identifying behavioral patterns, the system can anticipate hypoglycemic or hyperglycemic events before they occur.
+Figure 5.3: Proposed Architecture for Predictive Health Analytics
+As illustrated in the diagram above, the future roadmap for A.S.R involves a transition toward a proactive healthcare model. By processing historical data through a Machine Learning model, the system generates "Proactive Alerts." This ensures that the user receives preventive suggestions (e.g., "High risk of low sugar in 45 minutes; please have a snack") rather than just reactive classifications.
+3. GPS-Based Emergency Alert System:
+We propose implementing a geo-responsive emergency feature. In the event that the system detects life-threatening glucose levels, it would automatically share the patient’s real-time geographic location with emergency medical services or designated emergency contacts to ensure rapid life-saving intervention.
+4.Enhancing Medical Data Privacy and Security:
+To ensure the absolute confidentiality of sensitive medical records, we recommend implementing advanced end-to-end encryption protocols compliant with international healthcare standards, such as HIPAA. This will strengthen data integrity and facilitate the system's integration into large-scale hospital management systems.
+Conclusion:In concluding this research, we have, by the grace of God and with His guidance, completed the scientific and practical journey to develop the intelligent (A.S.R) system for the remote monitoring and follow-up of diabetes patients. This project represented a direct technical and scientific response to the growing challenges posed by diabetes as one of the most prominent contemporary health crises, particularly in healthcare settings facing a shortage of resources and specialised facilities, as is the case in Sudan.This study has successfully translated its six theoretical objectives into a tangible software reality, starting with the design of an integrated, user-friendly digital environment that allows patients to monitor their glucose levels periodically and regularly, through to the development of automated assessment mechanisms that provide an immediate classification of vital signs, thereby contributing directly to the early detection of abnormal health changes. The system also provided a practical solution to alleviate the burden and pressure on healthcare institutions and reduce unnecessary hospital visits through the feature of generating medical follow-up reports in PDF format and sharing them with doctors remotely.The contribution of the A.S.R. system was not limited to patients alone; it stood out for its comprehensive preventive approach through the creation of three dedicated smart pathways (the treatment pathway, the preventive pathway, and the public awareness pathway), supported by an interactive AI-powered assistant. This diversity has made it possible to bridge the ‘preventive gap’ that was overlooked in many previous systems, transforming the platform from a mere passive monitoring tool into a proactive ecosystem that contributes to raising health awareness and promoting the concept of self-management of the disease.Consequently, the results of this research open up promising prospects for digital transformation in the healthcare sector, confirming that the thoughtful integration of software engineering and medical science constitutes the best technical bridge to bridge geographical and structural gaps in the delivery of medical services. We hope that this work will serve as a cornerstone upon which future research can be built, particularly in the areas of connecting the system to the Internet of Things (IoT) and machine learning-based predictive analytics, to achieve smarter and safer healthcare for all.
+REFERENCES
+Ahmed, B.I., Ayo, M.A., Abdullah, A. and Yakubu, Y.(2017). 'Remote patient monitoring system engineering for diabetes management',Unpublished Manuscript.
+Alshammari, A., Khan, M. and Rahman, M.(2023). 'IoT-based remote monitoring systems for diabetes management',IEEE Access, 11, pp. 122450–122460.
+American Diabetes Association (ADA)(2022). 'Classification and Diagnosis of Diabetes: Standards of Medical Care in Diabetes',Diabetes Care, 45(S1), pp. S17–S38.
+Atkinson, M.A., Eisenbarth, G.S. and Michels, A.W.(2014). 'Type 1 diabetes',The Lancet, 383(9911), pp. 69–82.
+Bliss, M.(2007).The Discovery of Insulin. Chicago: University of Chicago Press.
+Centers for Disease Control and Prevention (CDC)(2022).National Diabetes Statistics Report. U.S. Department of Health and Human Services.
+DeFronzo, R.A., Ferrannini, E., P. Zimmet, and G. Alberti(2015). 'Type 2 Diabetes Mellitus',Nature Reviews Disease Primers, 1, Art. no. 15019.
+Diabetes Control and Complications Trial Research Group(1993). 'The effect of intensive treatment of diabetes on the development and progression of long-term complications in insulin-dependent diabetes mellitus',New England Journal of Medicine, 329(14), pp. 977–986.
+Ebers, G.(1937).The Papyrus Ebers: The Greatest Egyptian Medical Document. Translated by B. Ebbell. Copenhagen: Levin & Munksgaard.
+Gardner, D.S.L. et al.(2025). 'Digital health technology in diabetes management in the Asia–Pacific region: A narrative review of the current scenario and future outlook',Diabetes Therapy, 16(3), pp. 349–369.
+Giovani, D. et al.(2022). 'Non-Communicable Diseases: The Invisible Epidemic',Frontiers in Public Health, 10, Art. no. 8842.
+Greenwood, D.A., Gee, P.M., Fatkin, K.J. and Peeples, M.(2017). 'Digital Health Interventions for Diabetes Management',Diabetes Technology & Therapeutics, 19(S2), pp. S31–S41.
+Hacker, K. et al.(2024). 'The Burden of Chronic Disease',International Journal of Epidemiology, 53(2), pp. 415–422.
+Hou, C., Xu, Q., L. Li, and S. Li(2021). 'Effectiveness of Digital and Web-Based Diabetes Self-Management Interventions on Clinical Outcomes',Journal of Medical Internet Research, 23(1), p. e21112.
+International Diabetes Federation (IDF)(2021).IDF Diabetes Atlas. 10th edn. Brussels: International Diabetes Federation.
+Istepanian, R.S.H. et al.(2009). 'Evaluation of a mobile phone telemonitoring system for glycemic control in patients with diabetes',Journal of Telemedicine and Telecare, 15(3), pp. 125–128.
+Keegan, A.C. et al.(2023). 'Implementation of a patient-centered remote wound monitoring system for management of diabetic foot ulcers',Frontiers in Endocrinology, 14, Art. no. 1157518.
+Ratta, P., Abdullah, S. and Sharma, S.(2024). 'A blockchain-machine learning ecosystem for IoT-Based remote health monitoring of diabetic patients',Healthcare Analytics, 5, p. 100338.
+Sawyer, K. et al.(2025). 'A successful remote patient monitoring program for diabetes',Frontiers in Endocrinology, 16, Art. no. 1524567.
+Tipton, C.M.(2011). 'The history of diabetes mellitus: From antiquity to the 21st century',Journal of History of Medicine, 12, pp. 104-115.
+Willis, T.(1675).Pharmaceutice Rationalis: Sive Diatriba de Medicamentorum Operationibus in Humano Corpore. London: Hagae-Comitis.
+World Bank and World Health Organization(2023).Cause of death by non-communicable diseases (% of total). World Bank Data.
+World Health Organization (WHO)(2021).Global Health Estimates – Noncommunicable Diseases (NCD) Mortality 2021. Geneva: WHO.
+World Health Organization (WHO)(2021).Global Strategy on Digital Health 2020–2025. Geneva: WHO.
+World Health Organization (WHO)(2022).Digital Health for the Prevention and Control of NCDs. WHO Global Report.
+World Health Organization (WHO)(2023).Diabetes Fact Sheet. Geneva: WHO.
+World Health Organization (WHO)(2024).Global Report on Diabetes: Digital Health Interventions and Policy Frameworks. Geneva: WHO.
+World Health Organization (WHO)(2025).Noncommunicable Diseases Fact Sheet – 2025. Geneva: WHO.

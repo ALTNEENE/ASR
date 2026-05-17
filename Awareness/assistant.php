@@ -762,7 +762,29 @@ async function submitMessage(rawMessage, visibleMessage = '') {
       body: JSON.stringify({ message })
     });
 
-    const data = await response.json();
+    const raw = await response.text();
+    let data = null;
+
+    try {
+      data = raw ? JSON.parse(raw) : null;
+    } catch (parseError) {
+      const compact = raw
+        .replace(/<script\b[^>]*>.*?<\/script>/gis, ' ')
+        .replace(/<style\b[^>]*>.*?<\/style>/gis, ' ')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      if (/Vercel Authentication|Authentication Required/i.test(compact)) {
+        throw new Error('حماية Vercel تمنع الوصول إلى API. استخدم رابط Production أو عطّل Deployment Protection.');
+      }
+
+      throw new Error(compact.slice(0, 220) || 'استجابة غير صالحة من الخادم.');
+    }
+
+    if (!response.ok) {
+      throw new Error((data && data.error) ? data.error : `HTTP ${response.status}`);
+    }
 
     if (data.ok && data.text) {
       addMessage(data.text, 'assistant');
@@ -771,7 +793,8 @@ async function submitMessage(rawMessage, visibleMessage = '') {
       addMessage(data.error || 'عذراً، حدث خطأ. الرجاء المحاولة مرة أخرى.', 'assistant', true);
     }
   } catch (error) {
-    addMessage('عذراً، فشل الاتصال بالمساعد. تأكد من اتصالك بالإنترنت.', 'assistant', true);
+    const detail = error && error.message ? error.message : 'تأكد من اتصالك بالإنترنت.';
+    addMessage(`عذراً، فشل الاتصال بالمساعد: ${detail}`, 'assistant', true);
     console.error('Error:', error);
   } finally {
     typingIndicator.classList.remove('active');

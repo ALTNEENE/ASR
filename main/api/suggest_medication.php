@@ -10,6 +10,7 @@ declare(strict_types=1);
  */
 session_start();
 header('Content-Type: application/json; charset=utf-8');
+ini_set('display_errors', '0');
 
 if (!isset($_SESSION['user_id'])) {
     http_response_code(401);
@@ -21,6 +22,7 @@ require_once __DIR__ . '/../../google_sign_in/config/db.php';
 $groq_config = require __DIR__ . '/../../config/groq_config.php';
 
 $apiKey = trim((string)($groq_config['api_key'] ?? ''));
+$apiKeyStatus = $groq_config['api_key_status'] ?? ['ok' => $apiKey !== '', 'error' => ''];
 $chatUrl = (string)($groq_config['chat_url'] ?? 'https://api.groq.com/openai/v1/chat/completions');
 $model = (string)($groq_config['model'] ?? 'llama-3.3-70b-versatile');
 
@@ -32,8 +34,8 @@ if (mb_strlen($q) < 2) {
     exit;
 }
 
-if ($apiKey === '') {
-    echo json_encode(['ok' => false, 'error' => 'Groq API key is missing. Add GROQ_API_KEY to .env locally or to Vercel environment variables.'], JSON_UNESCAPED_UNICODE);
+if (!($apiKeyStatus['ok'] ?? false)) {
+    echo json_encode(['ok' => false, 'error' => (string)($apiKeyStatus['error'] ?? 'Groq API key is not configured.')], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -121,7 +123,6 @@ curl_setopt_array($ch, [
 $res = curl_exec($ch);
 $err = curl_error($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
 
 if ($err) {
     echo json_encode(['ok' => false, 'error' => 'خطأ اتصال: ' . $err], JSON_UNESCAPED_UNICODE);

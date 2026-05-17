@@ -16,6 +16,10 @@ Set these in Vercel Project Settings -> Environment Variables.
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USERNAME`, `SMTP_PASSWORD`
 - `FROM_EMAIL`, `FROM_NAME`
 
+Use the exact name `GROQ_API_KEY`. If you accidentally create `GROK_API_KEY`, the app can read it as a fallback, but `GROQ_API_KEY` is the correct Groq Cloud variable name. After changing any Vercel environment variable, redeploy the project. If you test a preview deployment, make sure the variable is available for Preview as well as Production.
+
+If the deployed URL shows Vercel Authentication, the assistant API can be blocked by Deployment Protection for users who are not authenticated. Use the public production domain or turn off Deployment Protection for the project before final testing.
+
 Vercel cannot connect to your local XAMPP MySQL database. Use a hosted MySQL-compatible database and import the SQL files in `database_setup.sql` and `db/migrations/`.
 
 ## Local XAMPP environment

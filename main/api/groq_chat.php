@@ -2,114 +2,140 @@
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
+ini_set('display_errors', '0');
 
-$groq_config = require __DIR__ . '/../../config/groq_config.php';
-$GROQ_API_KEY = trim((string)($groq_config['api_key'] ?? ''));
-$GROQ_CHAT_URL = (string)($groq_config['chat_url'] ?? 'https://api.groq.com/openai/v1/chat/completions');
-$GROQ_MODEL = (string)($groq_config['model'] ?? 'llama-3.3-70b-versatile');
+function respond_json(array $payload, int $status = 200): void
+{
+    http_response_code($status);
+    $json = json_encode(
+        $payload,
+        JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE
+    );
 
-// اقرأ JSON أو FORM
-$input  = json_decode(file_get_contents("php://input"), true) ?: [];
-$prompt = $input["prompt"] ?? $input["message"] ?? $_POST["prompt"] ?? $_POST["message"] ?? "";
-$prompt = trim($prompt);
-
-if (!$prompt) {
-  http_response_code(400);
-  echo json_encode(["ok"=>false, "error"=>"Missing prompt"], JSON_UNESCAPED_UNICODE);
-  exit;
+    echo $json === false ? '{"ok":false,"error":"JSON encode failed"}' : $json;
+    exit;
 }
 
-if ($GROQ_API_KEY === '') {
-  http_response_code(500);
-  echo json_encode([
-    "ok" => false,
-    "error" => "Groq API key is missing. Add GROQ_API_KEY to .env locally or to Vercel environment variables."
-  ], JSON_UNESCAPED_UNICODE);
-  exit;
+function response_snippet(string $body): string
+{
+    $body = preg_replace('/<script\b[^>]*>.*?<\/script>/is', ' ', $body) ?? $body;
+    $body = preg_replace('/<style\b[^>]*>.*?<\/style>/is', ' ', $body) ?? $body;
+    $body = strip_tags($body);
+    $body = preg_replace('/\s+/', ' ', $body) ?? $body;
+
+    return substr(trim($body), 0, 350);
 }
 
-if (!function_exists('curl_init')) {
-  http_response_code(500);
-  echo json_encode([
-    "ok" => false,
-    "error" => "PHP cURL extension is not enabled."
-  ], JSON_UNESCAPED_UNICODE);
-  exit;
-}
+try {
+    $groqConfig = require __DIR__ . '/../../config/groq_config.php';
+    $apiKey = trim((string)($groqConfig['api_key'] ?? ''));
+    $apiKeyStatus = $groqConfig['api_key_status'] ?? ['ok' => $apiKey !== '', 'error' => ''];
+    $apiKeySource = (string)($groqConfig['api_key_source'] ?? '');
+    $chatUrl = (string)($groqConfig['chat_url'] ?? 'https://api.groq.com/openai/v1/chat/completions');
+    $model = (string)($groqConfig['model'] ?? 'llama-3.3-70b-versatile');
 
-/* السياق النظامي SYSTEM_PROMPT */
-$SYSTEM_PROMPT = <<<SYS
-أنت مساعد ذكي متخصص في التوعية بمرض السكري. دورك هو تقديم المعرفه، الدعم، والطمأنينة للمستخدمين.
+    $rawInput = (string)file_get_contents('php://input');
+    $input = json_decode($rawInput, true);
+    if (!is_array($input)) {
+        $input = [];
+    }
 
-ما يمكنك الإجابة عليه:
-- أسئلة عن مرض السكري (أنواعه، أسبابه، أعراضه، مضاعفاته)
-- التغذية وتأثير الأطعمة والمشروبات على مستوى السكر في الدم
-- الأدوية المستخدمة في علاج السكري (معلومات عامة فقط، بدون جرعات)
-- نمط الحياة: الرياضة، الوزن، النوم، الضغط النفسي وعلاقتها بالسكري
-- قراءات الجلوكوز وتفسيرها
-- الوقاية من السكري ومضاعفاته
+    $prompt = $input['prompt'] ?? $input['message'] ?? $_POST['prompt'] ?? $_POST['message'] ?? '';
+    $prompt = trim((string)$prompt);
 
-ما لا يمكنك الإجابة عليه (ارفض بحزم):
-- أسئلة السياسة، الأخبار، الرياضة (كرة القدم وغيرها)، الترفيه، الموسيقى
-- أسئلة البرمجة، التقنية، الرياضيات
-- أسئلة التاريخ، الجغرافيا، الثقافة العامة غير الطبية
-- أي سؤال لا علاقة له بالسكري أو الصحة المرتبطة به
+    if ($prompt === '') {
+        respond_json(['ok' => false, 'error' => 'Missing prompt'], 400);
+    }
 
-قواعد الرد:
-1. إذا سُئلت عن طعام أو شراب: أجب من منظور تأثيره على السكر في الدم فقط.
-2. إذا طلب المستخدم جرعة أو تشخيص: قل "لا أستطيع تحديد الجرعات أو التشخيص، يرجى مراجعة الطبيب."
-3. إذا كان السؤال خارج نطاق السكري تماماً: قل فقط "أنا متخصص فقط في أسئلة مرض السكري، لا أستطيع الإجابة على هذا السؤال."
-4. لا تستخدم رموز Markdown مثل (*, **, #, -). اكتب نصاً عربياً عادياً ومباشراً.
-5. ردودك باللغة العربية دائماً ما لم يكتب المستخدم بالإنجليزية.
+    if (!($apiKeyStatus['ok'] ?? false)) {
+        respond_json([
+            'ok' => false,
+            'error' => (string)($apiKeyStatus['error'] ?? 'Groq API key is not configured.'),
+            'key_source' => $apiKeySource,
+        ], 500);
+    }
 
-تذكر: أنت لست طبيباً، بل مرشد توعوي متخصص في السكري فقط. كن دائماً داعماً ومطمئناً للمستخدم، خاصة عندما يظهر عليه القلق أو عدم التأكد من حالته الصحية.
+    if (!function_exists('curl_init')) {
+        respond_json(['ok' => false, 'error' => 'PHP cURL extension is not enabled.'], 500);
+    }
+
+    $systemPrompt = <<<'SYS'
+أنت مساعد ذكي متخصص في التوعية بمرض السكري. دورك تقديم معلومات عامة وواضحة وداعمة عن السكري فقط.
+
+يمكنك الإجابة عن أعراض السكري، التغذية، الرياضة، قراءات الجلوكوز، الوقاية، المضاعفات، ومعلومات عامة عن الأدوية بدون تحديد جرعات.
+
+لا تقدم تشخيصا طبيا ولا تحدد جرعات. إذا طلب المستخدم تشخيصا أو جرعة، قل له إنك لا تستطيع تحديد ذلك وأن عليه مراجعة الطبيب.
+
+إذا كان السؤال خارج نطاق السكري أو الصحة المرتبطة به، قل فقط: أنا متخصص فقط في أسئلة مرض السكري، لا أستطيع الإجابة على هذا السؤال.
+
+اكتب بالعربية الواضحة بدون Markdown. كن مختصرا ومطمئنا، واذكر دائما أن المعلومات للتوعية ولا تغني عن استشارة الطبيب عند وجود أعراض مقلقة.
 SYS;
 
-/* ✅ (2) هنا تستخدمه داخل messages */
-$payload = [
-  "model" => $GROQ_MODEL,
-  "messages" => [
-    ["role" => "system", "content" => $SYSTEM_PROMPT],
-    ["role" => "user", "content" => $prompt]
-  ],
-  "temperature" => 0.3,
-  "max_tokens" => 500
-];
+    $payload = [
+        'model' => $model,
+        'messages' => [
+            ['role' => 'system', 'content' => $systemPrompt],
+            ['role' => 'user', 'content' => $prompt],
+        ],
+        'temperature' => 0.3,
+        'max_tokens' => 500,
+    ];
 
-$ch = curl_init($GROQ_CHAT_URL);
-curl_setopt_array($ch, [
-  CURLOPT_POST => true,
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_HTTPHEADER => [
-    "Content-Type: application/json",
-    "Authorization: Bearer " . $GROQ_API_KEY
-  ],
-  CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE),
-  CURLOPT_TIMEOUT => 30
-]);
+    $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if ($payloadJson === false) {
+        respond_json(['ok' => false, 'error' => 'Could not encode Groq request payload.'], 500);
+    }
 
-$res  = curl_exec($ch);
-$err  = curl_error($ch);
-$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+    $ch = curl_init($chatUrl);
+    if ($ch === false) {
+        respond_json(['ok' => false, 'error' => 'Could not initialize cURL.'], 500);
+    }
 
-if ($err) {
-  http_response_code(500);
-  echo json_encode(["ok"=>false, "error"=>"cURL: $err"], JSON_UNESCAPED_UNICODE);
-  exit;
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $apiKey,
+        ],
+        CURLOPT_POSTFIELDS => $payloadJson,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_CONNECTTIMEOUT => 10,
+    ]);
+
+    $responseBody = curl_exec($ch);
+    $curlError = curl_error($ch);
+    $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($responseBody === false || $curlError !== '') {
+        respond_json(['ok' => false, 'error' => 'Groq connection failed: ' . $curlError], 502);
+    }
+
+    $decoded = json_decode((string)$responseBody, true);
+    if (!is_array($decoded)) {
+        respond_json([
+            'ok' => false,
+            'error' => 'Groq returned a non-JSON response.',
+            'http_code' => $httpCode,
+            'body' => response_snippet((string)$responseBody),
+        ], 502);
+    }
+
+    if ($httpCode < 200 || $httpCode >= 300) {
+        $status = ($httpCode >= 400 && $httpCode <= 599) ? $httpCode : 502;
+        respond_json([
+            'ok' => false,
+            'error' => (string)($decoded['error']['message'] ?? ('Groq API error HTTP ' . $httpCode)),
+            'http_code' => $httpCode,
+        ], $status);
+    }
+
+    $text = trim((string)($decoded['choices'][0]['message']['content'] ?? ''));
+    if ($text === '') {
+        respond_json(['ok' => false, 'error' => 'Groq response did not contain assistant text.'], 502);
+    }
+
+    respond_json(['ok' => true, 'text' => $text]);
+} catch (Throwable $e) {
+    respond_json(['ok' => false, 'error' => 'Assistant server error: ' . $e->getMessage()], 500);
 }
-
-$j = json_decode($res, true);
-$text = $j["choices"][0]["message"]["content"] ?? null;
-
-if ($code < 200 || $code >= 300) {
-  http_response_code($code);
-  echo json_encode([
-    "ok" => false,
-    "error" => $j["error"]["message"] ?? "Groq API error",
-    "raw" => $j
-  ], JSON_UNESCAPED_UNICODE);
-  exit;
-}
-
-echo json_encode(["ok"=>true, "text"=>$text], JSON_UNESCAPED_UNICODE);

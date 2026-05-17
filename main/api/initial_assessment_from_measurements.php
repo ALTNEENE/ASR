@@ -1,6 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json; charset=utf-8');
+ini_set('display_errors', '0');
 
 if (!isset($_SESSION['user_id'])) {
     http_response_code(401);
@@ -380,7 +381,6 @@ curl_setopt_array($ch, [
 $res = curl_exec($ch);
 $err = curl_error($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
 
 if ($err || $code < 200 || $code >= 300 || !$res) {
     $payload = [
@@ -450,4 +450,3 @@ $_SESSION[$cache_key] = $json;
 $_SESSION[$cache_time_key] = time();
 echo $json;
 ?>
-

@@ -61,7 +61,6 @@ if (!function_exists('google_http_json')) {
         $body = curl_exec($ch);
         $error = curl_error($ch);
         $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
 
         if ($error !== '') {
             throw new RuntimeException('Google OAuth request failed: ' . $error);
